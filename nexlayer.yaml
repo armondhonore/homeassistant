@@ -1,0 +1,14 @@
+application:
+  name: homeassistant
+  pods:
+  - name: app
+    image: ghcr.io/home-assistant/home-assistant:stable
+    path: /
+    servicePorts:
+    - 8123
+    vars:
+      TZ: America/Chicago
+    volumes:
+    - name: ha-config
+      mountPath: /config
+      size: 5Gi
